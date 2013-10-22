@@ -1,0 +1,29 @@
+OASISFormat: 0.3
+Name:        ocaml-btree
+Version:     0.1
+Synopsis:    Persistent b-tree over Mirage Blkif (initially via Baardskeerder)
+Authors:     Chris Greenhalgh
+License:     BSD3
+Plugins:     META (0.3)
+BuildTools:  ocamlbuild
+
+Library ocaml_btree
+  CompiledObject:  best
+  Path:            lib
+  Findlibname:     ocaml-btree
+  Modules:         Btree
+  BuildDepends:    lwt, lwt.syntax, lwt.unix, cstruct, cstruct.syntax, baardskeerder, mirage, threads
+
+Executable btree_test
+  CompiledObject:  best
+  Path:            test
+  MainIs:          btree_test.ml
+  Build$:          flag(tests)
+  Custom:          true
+  Install:         false
+  BuildDepends:    lwt, lwt.syntax, lwt.unix, cstruct, cstruct.syntax, oUnit, ocaml-btree, unix-simple-blkdev, mirage, baardskeerder
+
+Test btree_test
+  Run$:            flag(tests)
+  Command:         $btree_test
+  WorkingDirectory:test
