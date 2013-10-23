@@ -10,7 +10,7 @@ BuildTools:  ocamlbuild
 Library ocaml_btree
   CompiledObject:  best
   Path:            lib
-  Findlibname:     ocaml-btree
+  Findlibname:     btree
   Modules:         Btree
   BuildDepends:    lwt, lwt.syntax, cstruct, cstruct.syntax, mirage-baardskeerder, mirage-baardskeerder.mirage, mirage, threads
 
@@ -21,7 +21,7 @@ Executable btree_test
   Build$:          flag(tests)
   Custom:          true
   Install:         false
-  BuildDepends:    lwt, lwt.syntax, cstruct, cstruct.syntax, oUnit, ocaml-btree, unix-simple-blkdev, mirage, mirage-baardskeerder, mirage-baardskeerder.mirage
+  BuildDepends:    lwt, lwt.syntax, cstruct, cstruct.syntax, oUnit, btree, unix-simple-blkdev
 
 Test btree_test
   Run$:            flag(tests)
