@@ -1,10 +1,10 @@
 # OASIS_START
-# DO NOT EDIT (digest: bb0e58632aac9c164142d9bdf3269e88)
+# DO NOT EDIT (digest: 01e7d272f5f168fee378e2b23c90d4ca)
 version = "0.1"
 description =
 "Persistent b-tree over Mirage Blkif (initially via Baardskeerder)"
 requires =
-"lwt lwt.syntax lwt.unix cstruct cstruct.syntax baardskeerder mirage threads"
+"lwt lwt.syntax cstruct cstruct.syntax mirage-baardskeerder mirage-baardskeerder.mirage mirage threads"
 archive(byte) = "ocaml_btree.cma"
 archive(byte, plugin) = "ocaml_btree.cma"
 archive(native) = "ocaml_btree.cmxa"

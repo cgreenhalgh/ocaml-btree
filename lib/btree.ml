@@ -28,7 +28,8 @@
 
 open Lwt
 
-module BS = Baardskeerder.Baardskeerder(Baardskeerder.Logs.Flog0)(Baardskeerder.Blkif.Store) 
+module BS =
+        Baardskeerder.Baardskeerder(Baardskeerder.Logs.Flog0)(Baardskeerder_mirage.Stores.Blkif) 
 
 (* persistent btree for mirage over OS.Devices.blkif *)
 type t = {
