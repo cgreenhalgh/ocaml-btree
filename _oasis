@@ -12,7 +12,7 @@ Library ocaml_btree
   Path:            lib
   Findlibname:     btree
   Modules:         Btree
-  BuildDepends:    lwt, lwt.syntax, cstruct, cstruct.syntax, mirage-baardskeerder, mirage-baardskeerder.mirage, mirage, threads
+  BuildDepends:    lwt, lwt.syntax, cstruct, cstruct.syntax, mirage-baardskeerder, mirage-baardskeerder.mirage, mirage
 
 Executable btree_test
   CompiledObject:  best
