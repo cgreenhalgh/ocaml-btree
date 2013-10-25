@@ -1,0 +1,4 @@
+name = 'btree-test'
+kernel = 'mir-btree_test.xen'
+disk = ['tap:aio:../xen_testfile,sda1,w']
+memory = 256
