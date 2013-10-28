@@ -110,10 +110,9 @@ let delete t (key:string) =
   return ()
 
 let create blkif : btree Lwt.t =
-  (* TODO make over provided blkif! *)
-  Lwt.catch (fun () -> BS.init "testfile") 
+  Lwt.catch (fun () -> BS.init blkif#id) 
     (fun ex -> Printf.printf "Error init\n%!"; return ()) >>
-  lwt bs = BS.make "testfile" in
+  lwt bs = BS.make blkif#id in
   let t = { blkif; bs } in
   return (object
     method iter_s = iter_s t
