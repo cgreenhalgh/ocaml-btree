@@ -13,7 +13,7 @@ let get_first_blkif () =
 let init_xen () = 
   (* Blkfront will map xen block devs to Mirage blkif *)
   lwt () = Blkfront.register () in
-  return ()
+  Lwt.return ()
 
 let main () =
   OS.Console.log "hello" ;
